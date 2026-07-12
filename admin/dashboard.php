@@ -64,13 +64,16 @@ require_once 'includes/admin_header.php';
 </div>
 
 <div class="admin-card">
-  <h5 class="mb-3">Recent Contact Messages</h5>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">Recent Contact Messages</h5>
+    <a href="messages.php" class="btn btn-sm btn-outline-secondary">View All &amp; Manage</a>
+  </div>
   <?php if (count($recent_messages) === 0): ?>
     <p class="text-muted mb-0">No messages received yet.</p>
   <?php else: ?>
   <div class="table-responsive">
     <table class="table align-middle">
-      <thead><tr><th>Name</th><th>Email</th><th>Subject</th><th>Received</th></tr></thead>
+      <thead><tr><th>Name</th><th>Email</th><th>Subject</th><th>Received</th><th></th></tr></thead>
       <tbody>
         <?php foreach ($recent_messages as $m): ?>
         <tr>
@@ -78,6 +81,11 @@ require_once 'includes/admin_header.php';
           <td><?php echo htmlspecialchars($m['email']); ?></td>
           <td><?php echo htmlspecialchars($m['subject'] ?: '—'); ?></td>
           <td><?php echo date('M d, Y', strtotime($m['created_at'])); ?></td>
+          <td class="text-nowrap">
+            <a href="messages.php" class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></a>
+            <a href="messages.php?delete=<?php echo $m['id']; ?>" class="btn btn-sm btn-outline-danger"
+               onclick="return confirm('Delete this message?');"><i class="bi bi-trash"></i></a>
+          </td>
         </tr>
         <?php endforeach; ?>
       </tbody>

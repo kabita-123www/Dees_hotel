@@ -39,6 +39,7 @@
   <a href="rooms.php" class="<?php echo $current=='rooms.php'?'active':''; ?>"><i class="bi bi-door-closed"></i> Rooms</a>
   <a href="facilities.php" class="<?php echo $current=='facilities.php'?'active':''; ?>"><i class="bi bi-stars"></i> Facilities</a>
   <a href="gallery.php" class="<?php echo $current=='gallery.php'?'active':''; ?>"><i class="bi bi-grid-3x3-gap"></i> Gallery</a>
+  <a href="messages.php" class="<?php echo $current=='messages.php'?'active':''; ?>"><i class="bi bi-envelope"></i> Messages</a>
   <a href="../index.php" target="_blank"><i class="bi bi-box-arrow-up-right"></i> View Site</a>
   <a href="logout.php"><i class="bi bi-power"></i> Logout</a>
 </div>
@@ -58,6 +59,7 @@
       <a href="rooms.php" class="text-light py-2">Rooms</a>
       <a href="facilities.php" class="text-light py-2">Facilities</a>
       <a href="gallery.php" class="text-light py-2">Gallery</a>
+      <a href="messages.php" class="text-light py-2">Messages</a>
       <a href="logout.php" class="text-light py-2">Logout</a>
     </div>
   </div>
